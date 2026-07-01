@@ -305,11 +305,6 @@ Every magic string, URL, and default uses `typing.Final`. Type checkers (mypy, p
 
 ---
 
-## Screenshots
-
-> _Add terminal screenshots here after running the CLI against the testnet._
-
----
 
 ## License
 
