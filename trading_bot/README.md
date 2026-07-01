@@ -101,7 +101,7 @@ The application is driven by environment variables defined in a `.env` file at t
 
 2. **Paste your Binance Futures Testnet API Key:**
    Open the `.env` file in your editor and paste your Binance Futures Testnet API key next to `BINANCE_API_KEY=`.
-   - **Where to obtain:** Register at [https://testnet.binancefuture.com](https://testnet.binancefuture.com) and click on the "API Key" button to generate your keys.
+   - **Where to obtain:** Register at [https://testnet.binancefuture.com](https://demo.binance.com/en/futures/BTCUSDT) and click on the "API Key" button to generate your keys.
 
 3. **Paste your Secret Key:**
    Paste your Binance Futures Testnet API secret key next to `BINANCE_API_SECRET=`.
