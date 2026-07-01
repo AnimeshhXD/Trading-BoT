@@ -1,9 +1,7 @@
 # Credentials — never commit this
 .env
 
-# Runtime/debug artifacts
-logs/trading.log
-logs/*
+
 
 
 # Log files
