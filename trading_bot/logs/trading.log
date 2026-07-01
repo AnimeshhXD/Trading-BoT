@@ -1,0 +1,102 @@
+2026-07-01 22:23:50.778 | INFO     | bot.client:connect:79 | Connecting to Binance Futures Testnet...
+2026-07-01 22:23:51.270 | DEBUG    | bot.client:ping:124 | Ping successful.
+2026-07-01 22:23:51.270 | INFO     | bot.client:connect:101 | Connected successfully to https://testnet.binancefuture.com
+2026-07-01 22:23:51.270 | INFO     | bot.orders:place_order:87 | Order received | symbol=BTCUSDT side=BUY type=STOP_LIMIT qty=0.001
+2026-07-01 22:23:51.271 | DEBUG    | bot.orders:place_order:100 | Loading exchange info for validation...
+2026-07-01 22:23:51.271 | DEBUG    | bot.client:get_exchange_info:161 | Fetching futures exchange info...
+2026-07-01 22:23:51.656 | DEBUG    | bot.orders:place_order:106 | Validation passed.
+2026-07-01 22:23:51.656 | DEBUG    | bot.client:place_stop_limit_order:228 | Placing STOP-LIMIT order | payload={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'STOP', 'quantity': '0.001', 'price': '108500', 'stopPrice': '108000', 'timeInForce': 'GTC', 'recvWindow': 5000}
+2026-07-01 22:23:51.657 | DEBUG    | bot.client:_log_before_binance_call:254 | 
+========== REQUEST ==========
+Endpoint: futures_create_order
+Timestamp(ms): 1782924831656
+recvWindow: 5000
+use_testnet flag: True
+Payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'STOP', 'quantity': '0.001', 'price': '108500', 'stopPrice': '108000', 'timeInForce': 'GTC', 'recvWindow': 5000}
+Payload types: {'symbol': 'str', 'side': 'str', 'type': 'str', 'quantity': 'str', 'price': 'str', 'stopPrice': 'str', 'timeInForce': 'str', 'recvWindow': 'int'}
+=============================
+
+2026-07-01 22:23:51.817 | DEBUG    | bot.client:_execute_order:288 | Order response | response={'algoId': 1000000121492941, 'clientAlgoId': 'x-Cb7ytekJ999f34ee81bfe839980a12', 'algoType': 'CONDITIONAL', 'orderType': 'STOP', 'symbol': 'BTCUSDT', 'side': 'BUY', 'positionSide': 'BOTH', 'timeInForce': 'GTC', 'quantity': '0.0010', 'algoStatus': 'NEW', 'triggerPrice': '108000.00', 'price': '108500.00', 'icebergQuantity': None, 'selfTradePreventionMode': 'EXPIRE_MAKER', 'workingType': 'CONTRACT_PRICE', 'priceMatch': 'NONE', 'closePosition': False, 'priceProtect': False, 'reduceOnly': False, 'createTime': 1782924831691, 'updateTime': 1782924831691, 'triggerTime': 0, 'goodTillDate': 0}
+2026-07-01 22:23:51.817 | ERROR    | __main__:place_order:228 | Unexpected exception: Binance response missing required keys: ['orderId', 'type', 'status', 'origQty', 'executedQty']. Available keys: ['algoId', 'clientAlgoId', 'algoType', 'orderType', 'symbol', 'side', 'positionSide', 'timeInForce', 'quantity', 'algoStatus', 'triggerPrice', 'price', 'icebergQuantity', 'selfTradePreventionMode', 'workingType', 'priceMatch', 'closePosition', 'priceProtect', 'reduceOnly', 'createTime', 'updateTime', 'triggerTime', 'goodTillDate']
+Traceback (most recent call last):
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\cli.py", line 332, in <module>
+    app()
+    └ <typer.main.Typer object at 0x000001FF64B3E250>
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\typer\main.py", line 309, in __call__
+    return get_command(self)(*args, **kwargs)
+           │           │      │       └ {}
+           │           │      └ ()
+           │           └ <typer.main.Typer object at 0x000001FF64B3E250>
+           └ <function get_command at 0x000001FF64B2AAC0>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function TyperGroup.main at 0x000001FF64A72160>
+           └ <TyperGroup trading-bot>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\typer\core.py", line 723, in main
+    return _main(
+           └ <function _main at 0x000001FF64A71300>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\typer\core.py", line 193, in _main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001FF6783C090>
+         │    └ <function MultiCommand.invoke at 0x000001FF62A140E0>
+         └ <TyperGroup trading-bot>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\click\core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+           │               │       │       │      └ <click.core.Context object at 0x000001FF64A8C210>
+           │               │       │       └ <function Command.invoke at 0x000001FF62A0BA60>
+           │               │       └ <TyperCommand order>
+           │               └ <click.core.Context object at 0x000001FF64A8C210>
+           └ <function MultiCommand.invoke.<locals>._process_result at 0x000001FF67834FE0>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'STOP', 'quantity': '0.001', 'price': '108500', 'stop_price': '108000'}
+           │   │      │    │           └ <click.core.Context object at 0x000001FF64A8C210>
+           │   │      │    └ <function place_order at 0x000001FF67834C20>
+           │   │      └ <TyperCommand order>
+           │   └ <function Context.invoke at 0x000001FF62A0A3E0>
+           └ <click.core.Context object at 0x000001FF64A8C210>
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'STOP', 'quantity': '0.001', 'price': '108500', 'stop_price': '108000'}
+                       └ ()
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\.venv\Lib\site-packages\typer\main.py", line 692, in wrapper
+    return callback(**use_params)
+           │          └ {'symbol': 'BTCUSDT', 'side': <OrderSide.BUY: 'BUY'>, 'order_type': 'STOP', 'quantity': '0.001', 'price': '108500', 'stop_pri...
+           └ <function place_order at 0x000001FF678347C0>
+
+> File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\cli.py", line 198, in place_order
+    response = service.place_order(request)
+               │       │           └ OrderRequest(symbol='BTCUSDT', side=<OrderSide.BUY: 'BUY'>, order_type=<OrderType.STOP_LIMIT: 'STOP'>, quantity=Decimal('0.00...
+               │       └ <function OrderService.place_order at 0x000001FF6683FE20>
+               └ <bot.orders.OrderService object at 0x000001FF657E19D0>
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\bot\orders.py", line 112, in place_order
+    response = self._dispatch(request)
+               │    │         └ OrderRequest(symbol='BTCUSDT', side=<OrderSide.BUY: 'BUY'>, order_type=<OrderType.STOP_LIMIT: 'STOP'>, quantity=Decimal('0.00...
+               │    └ <function OrderService._dispatch at 0x000001FF6683FEC0>
+               └ <bot.orders.OrderService object at 0x000001FF657E19D0>
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\bot\orders.py", line 159, in _dispatch
+    return handler(request)
+           │       └ OrderRequest(symbol='BTCUSDT', side=<OrderSide.BUY: 'BUY'>, order_type=<OrderType.STOP_LIMIT: 'STOP'>, quantity=Decimal('0.00...
+           └ <bound method BinanceClient.place_stop_limit_order of <bot.client.BinanceClient object at 0x000001FF678440D0>>
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\bot\client.py", line 231, in place_stop_limit_order
+    return OrderResponse.from_api_response(raw)
+           │             │                 └ {'algoId': 1000000121492941, 'clientAlgoId': 'x-Cb7ytekJ999f34ee81bfe839980a12', 'algoType': 'CONDITIONAL', 'orderType': 'STO...
+           │             └ <classmethod(<function OrderResponse.from_api_response at 0x000001FF667FAAC0>)>
+           └ <class 'bot.models.OrderResponse'>
+
+  File "C:\Users\ANIMESH\Desktop\PTC\New folder\trading_bot\bot\models.py", line 200, in from_api_response
+    raise ValueError(
+
+ValueError: Binance response missing required keys: ['orderId', 'type', 'status', 'origQty', 'executedQty']. Available keys: ['algoId', 'clientAlgoId', 'algoType', 'orderType', 'symbol', 'side', 'positionSide', 'timeInForce', 'quantity', 'algoStatus', 'triggerPrice', 'price', 'icebergQuantity', 'selfTradePreventionMode', 'workingType', 'priceMatch', 'closePosition', 'priceProtect', 'reduceOnly', 'createTime', 'updateTime', 'triggerTime', 'goodTillDate']
+2026-07-01 22:24:01.930 | INFO     | bot.client:connect:79 | Connecting to Binance Futures Testnet...
+2026-07-01 22:24:02.439 | DEBUG    | bot.client:ping:124 | Ping successful.
+2026-07-01 22:24:02.439 | INFO     | bot.client:connect:101 | Connected successfully to https://testnet.binancefuture.com
+2026-07-01 22:24:02.440 | DEBUG    | bot.client:get_account:142 | Fetching futures account info...
+2026-07-01 22:24:02.799 | DEBUG    | bot.client:get_account:146 | Account info fetched successfully.

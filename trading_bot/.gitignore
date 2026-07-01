@@ -1,13 +1,6 @@
 # Credentials 
 .env
 
-
-
-
-# Log files
-logs/
-*.log
-
 # Python bytecode
 __pycache__/
 *.py[cod]
